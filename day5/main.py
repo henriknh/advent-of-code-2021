@@ -4,7 +4,7 @@ vents = []
 map = []
 
 
-def aoc5(lines):
+def day5(lines):
     maxX = 0
     maxY = 0
 

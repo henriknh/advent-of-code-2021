@@ -1,6 +1,6 @@
-def aoc2(lines):
+def day2(lines):
     x = 0
-    y = 0 
+    y = 0
 
     for line in lines:
         [dir, value] = line.split()
@@ -15,7 +15,7 @@ def aoc2(lines):
     print("X:", x, "Y:", y, "sum:", x*y)
 
     x = 0
-    y = 0 
+    y = 0
     aim = 0
 
     for line in lines:

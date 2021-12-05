@@ -3,7 +3,8 @@ import utils
 boards = []
 sequence = []
 
-def aoc4(lines):
+
+def day4(lines):
     sequence = utils.str_to_int_arr(lines[0], ',')
     print(sequence)
 
@@ -33,15 +34,18 @@ def aoc4(lines):
                 return
             bingo_board = check_boards(sequence[:i])
 
+
 def check_boards(draw):
     for board in boards:
         if check_board(draw, board):
             return board
     return False
 
+
 def check_board(draw, board):
     if check_columns(draw, board) or check_rows(draw, board):
         return True
+
 
 def check_columns(draw, board):
     for i in range(5):
@@ -51,10 +55,12 @@ def check_columns(draw, board):
         if check_arr(draw, col):
             return True
 
+
 def check_rows(draw, board):
     for i in range(5):
         if check_arr(draw, board[i]):
             return True
+
 
 def check_arr(draw, row):
     count = 0
@@ -62,6 +68,7 @@ def check_arr(draw, row):
         if r in draw:
             count += 1
     return count == 5
+
 
 def calc_score(draw, board):
     numbers = []

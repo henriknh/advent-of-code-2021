@@ -1,4 +1,4 @@
-def aoc1(lines):
+def day1(lines):
     count = 0
     prev = 9999999
 
@@ -23,7 +23,7 @@ def aoc1(lines):
 
         if len(slide) == 3:
             prev = slide[0] + slide[1] + slide[2]
-            
+
             slide.pop(0)
         if len(slide) < 3:
             slide.append(int(line))
@@ -33,6 +33,6 @@ def aoc1(lines):
 
         if prev < curr:
             count += 1
-        
+
     print('B')
     print(count)

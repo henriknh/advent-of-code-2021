@@ -1,4 +1,4 @@
-def aoc3(lines):
+def day3(lines):
     bits_count = len(lines[0])
 
     line_count = 0

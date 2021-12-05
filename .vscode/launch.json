@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "c:/Users/Henrik/Documents/aoc/main.py",
             "console": "integratedTerminal",
-            "args": ["aoc5", "debu"]
+            "args": ["day5", "debug"]
         }
     ]
 }
