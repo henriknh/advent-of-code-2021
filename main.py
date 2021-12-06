@@ -4,6 +4,7 @@ from day2.main import day2
 from day3.main import day3
 from day4.main import day4
 from day5.main import day5
+from day6.main import day6
 
 if len(sys.argv) < 2:
     print('choose aoc day')
