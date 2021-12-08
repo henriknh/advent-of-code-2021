@@ -1,12 +1,11 @@
-signals = ['acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab']
-outputs = ['cdfeb fcadb cdfeb cdbaf']
+signals = []#['acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab']
+outputs = []#['cdfeb fcadb cdfeb cdbaf']
 
 def day8(lines):
     for line in lines:
         [signal, output] = line.split(' | ')
         signals.append(signal)
         outputs.append(output)
-
 
     zero = 0
     one = 0
@@ -35,7 +34,6 @@ def day8(lines):
     print('seven', seven)
     print('eight', eight)
     print('sum', one+four+seven+eight)
-
 
     sum = 0
 
@@ -87,8 +85,8 @@ def day8(lines):
                 if not s in t:
                     six = t
                     break
-        for t in six_dig:
 
+        for t in six_dig:
             if t != six:
                 count = 0
                 for s in four:
@@ -102,22 +100,27 @@ def day8(lines):
         for c in six:
             if c not in nine:
                 map[4] = c
+                break
         for c in nine:
             if c not in six:
                 map[2] = c
+                break
         for c in four:
             if c not in zero:
                 map[3] = c
+                break
         for s in seven:
             if s != map[0] and s != map[2]:
                 map[5] = s
-        for s in nine:
-            if s != map[0] and s != map[2] and s != map[3] and s != map[5]:
+                break
+        for s in four:
+            if s != map[2] and s != map[3] and s != map[5]:
                 map[1] = s
+                break
         for s in zero:
             if s != map[0] and s != map[1] and s != map[2] and s != map[4] and s != map[5]:
                 map[6] = s
-
+                break
 
         print('0 zero', zero)
         print('1 one', one)
@@ -136,7 +139,6 @@ def day8(lines):
         print('\t', map[3])
         print(map[4], '\t\t', map[5])
         print('\t', map[6])
-
 
         output = outputs[i]
         print(output)
@@ -158,7 +160,7 @@ def hash_to_number(h, map):
 
     if len(dig) == 7 and '0' in dig and '1' in dig and '2' in dig and '3' in dig and '4' in dig and '5' in dig and '6' in dig:
         return '8'
-    elif len(dig) == 7 and '0' in dig and '1' in dig and '2' in dig and '4' in dig and '5' in dig and '6' in dig:
+    elif len(dig) == 6 and '0' in dig and '1' in dig and '2' in dig and '4' in dig and '5' in dig and '6' in dig:
         return '0'
     elif len(dig) == 6 and '0' in dig and '1' in dig and '3' in dig and '4' in dig and '5' in dig and '6' in dig:
         return '6'
